@@ -1,5 +1,6 @@
 package seedu.duke;
 
+import java.awt.print.Book;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -23,7 +24,7 @@ public class Storage {
     }
 
     public static String toSaveAsString(Book book) {
-        assert path != null && !path.trim().isEmpty() : "File path cannot be null or empty";
+        assert (filePath != null) && !filePath.trim().isEmpty() : "File path cannot be null or empty";
 
         return book.getBookDescription() + "|" + book.getSaveDescription() + "|" + book.getStatus();
     }
@@ -44,7 +45,7 @@ public class Storage {
             String bookName = specifiers[BOOK_NAME_INDEX];
 
             Book book = new Book(bookName, specifiers[BOOK_STATUS]);
-            BookManager.addBook(book);
+            bookManager.addNewBook(book.toString());
         }
 
         File file = new File(filePath);
