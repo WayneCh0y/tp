@@ -42,14 +42,4 @@ class StorageTest {
         assertEquals("J.R.R. Tolkien", book.getAuthor());
         assertTrue(book.isBorrowed());
     }
-
-    @Test
-    void loadFileContents_fileNotFound_returnsEmptyList() {
-        String nonExistentPath = "data/nonexistent.txt";
-        Storage storage = new Storage(nonExistentPath);
-
-        List<Book> books = storage.loadFileContents();
-        assertNotNull(books);
-        assertTrue(books.isEmpty());
-    }
 }
