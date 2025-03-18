@@ -11,8 +11,13 @@ public class Ui {
     }
 
     public String readCommand() {
-        System.out.print("Enter command: "); //EDIT ACCORDINGLY
-        return scanner.nextLine().trim();
+        if (scanner.hasNextLine()) {
+            return scanner.nextLine();
+        } else {
+            System.out.println("No input detected. Exiting...");
+            System.exit(0);
+            return ""; // Dummy return to satisfy compiler
+        }
     }
 
     public void printWelcomeMessage() {
