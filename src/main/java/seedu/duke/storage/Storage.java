@@ -81,7 +81,7 @@ public class Storage {
             directory.mkdirs();
         }
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) { // Overwrites file
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             for (Book book : bookList) {
                 writer.write(toSaveAsString(book));
                 writer.newLine();
