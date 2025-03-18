@@ -55,5 +55,6 @@ public class LeBook {
     public static void main(String[] args) {
         assert args != null : "Program arguments should not be null";
         new LeBook("data/LeBook_data.txt").run();
+        System.exit(0);
     }
 }
